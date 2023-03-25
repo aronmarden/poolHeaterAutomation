@@ -1,4 +1,3 @@
-```
 # DC Inverter Swimming Pool Heater Monitor
 
 This repository contains the files required to monitor a DC Inverter Swimming Pool Heater that has a Smart Life (Tuya Smart) IoT wifi box and send telemetry to New Relic.
@@ -58,4 +57,3 @@ This will start the Node.js script, which will connect to your device and start 
 ## Work in Progress
 
 This repository is a work in progress and may contain incomplete or experimental features. Please use it with caution and report any issues or bugs that you encounter.
-```
