@@ -1,0 +1,23 @@
+integrations:
+  - name: nri-flex
+    interval: 10s
+    # timeout: 5s
+    config:
+      name: local_pool_heater
+      apis:
+        - event_type: local_pool_heater
+          commands:
+            - run: /usr/bin/node /home/amarden/tuyapi/local_pool_heater.js
+              split: horizontal
+              regex_match: true
+              split_by: >-
+                {\s\w+:\s{\s'\d+':\s(\w+),\s'\d+':\s(\d+),\s'\d+':\s(\d+),\s'\d+':\s'(\w+)',\s'\d+':\s(\d+)\s}\s}
+
+              set_header:
+                [
+                  powerStatus,
+                  targetTemperature,
+                  currentTemperature,
+                  Mode,
+                  Fault,
+                ]
